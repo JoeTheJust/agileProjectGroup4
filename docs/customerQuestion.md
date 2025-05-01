@@ -1,4 +1,5 @@
 | Questions: |
+|------------|
 | 1 - What specific data do you want to be saved from the attendance taken from the day? |
 | 2 - How do you want the saved data formatted? note: courses? sections? dates? |
 | 3 - Clarification on the attendance process (one name at a time or all at once?) |
