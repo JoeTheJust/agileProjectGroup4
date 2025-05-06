@@ -15,6 +15,6 @@
 |---------|------------------|---------------|-------------|--------|--------------|
 | T-1 | Create ER Diagram/Schema for data members. | US-2 | Joe, Dustin | In Progress | None |
 | T-2 | Create Datatbase based off of ER Diagram/Schema. | US-2 | Joe, Dustin | To Do | T-1 |
-| T-3 | Add a Course class that hold data for each course | US-2 | Daniel, Kyle | Done | None |
+| T-3 | Add a Course class that holds data for each course | US-2 | Daniel, Kyle | Done | None |
 | T-4 | Implement methods that can edit and get data. | US-1 | Daniel, Kyle | To Do | T-3 |
 | T-5 | Create interface that can iterate through data to edit it. | US-1 | Daniel, Kyle | To Do | T-4 |
