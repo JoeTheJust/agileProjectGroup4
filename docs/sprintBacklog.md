@@ -8,12 +8,13 @@
 | User Story ID  | User Story Name | Assigned To |
 |----------------|-----------------|-------------|
 | US-1           | Insert Student Data  |  Joe, Kyle, Dustin, Daniel |
-| US-2           | Create Class Data    |  Joe, Kyle, Dustin, Daniel |
+| US-2           | Create Course Date  |  Joe, Kyle, Dustin, Daniel |
 
 ### Format:
 | Task ID | Task Description | User Story ID | Assigned To | Status | Dependencies |
 |---------|------------------|---------------|-------------|--------|--------------|
 | T-1 | Create ER Diagram/Schema for data members. | US-2 | Joe, Dustin | In Progress | None |
 | T-2 | Create Datatbase based off of ER Diagram/Schema. | US-2 | Joe, Dustin | To Do | T-1 |
-| T-3 | Add User table to the database and implement password hashing and verification. | US-2 | Alice | To Do | None |
-| T-4 | Create frontend form for login. | US-2 | Bob | To Do | T-3 |
+| T-3 | Add a Course class that hold data for each course | US-2 | Daniel, Kyle | Done | None |
+| T-4 | Implement methods that can edit and get data. | US-1 | Daniel, Kyle | To Do | T-3 |
+| T-5 | Create interface that can iterate through data to edit it. | US-1 | Daniel, Kyle | To Do | T-4 |
