@@ -43,8 +43,8 @@ void DBInterface::EnterStudent(string fName, string lName) {
 //     }
 // }
 
-void DBInterface::EnterCourse(string courseName, string description) {
-    string sql = "INSERT INTO Courses (courseName, description) VALUES (?, ?);";
+void DBInterface::EnterCourse(string courseName) {
+    string sql = "INSERT INTO Courses (courseName) VALUES (?);";
 
     sqlite3_stmt* myStatement;
 
@@ -52,7 +52,6 @@ void DBInterface::EnterCourse(string courseName, string description) {
 
     if(status == SQLITE_OK) {
         sqlite3_bind_text(myStatement, 1, courseName.c_str(), -1, SQLITE_STATIC);
-        sqlite3_bind_text(myStatement, 2, description.c_str(), -1, SQLITE_STATIC);
 
         if(!exectueQueryNoResultsBack(myStatement)) {
             cout << "Error inserting into Course Table" << endl;
@@ -80,7 +79,7 @@ void DBInterface::EnterAttendance(int courseId, int studentId, string date, stri
 }
 
 void DBInterface::CreateCourseTable() {
-    string sql = "CREATE TABLE IF NOT EXISTS Courses ( id INTEGER PRIMARY KEY NOT NULL, courseName TEXT, description TEXT);";
+    string sql = "CREATE TABLE IF NOT EXISTS Courses ( id INTEGER PRIMARY KEY NOT NULL, courseName TEXT);";
 
     if(!exectueQueryNoResultsBack(sql)) {
         cout << "Error in creating Course Table" << endl;

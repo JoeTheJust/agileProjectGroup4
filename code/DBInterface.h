@@ -11,7 +11,7 @@ public:
 
     void EnterStudent(string fName, string lName);
     //void EnterSection(string description, int courseId);
-    void EnterCourse(string courseName, string description);
+    void EnterCourse(string courseName);
     void EnterAttendance(int sectionID, int studentID, string date, string attendanceStatus);
 
 
