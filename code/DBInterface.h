@@ -10,14 +10,14 @@ public:
 
 
     void EnterStudent(string fName, string lName);
-    void EnterSection(string description, int courseId);
-    void EnterCourse(string courseName);
+    //void EnterSection(string description, int courseId);
+    void EnterCourse(string courseName, string description);
     void EnterAttendance(int sectionID, int studentID, string date, string attendanceStatus);
 
 
     void CreateCourseTable();
     void CreateStudentTable();
-    void CreateSectionTable();
+    //void CreateSectionTable();
     void CreateAttendanceTable();
 
 private:
