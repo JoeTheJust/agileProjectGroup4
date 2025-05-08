@@ -2,9 +2,25 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <fstream>
 #include <sstream>
 
 using namespace std;
+
+struct StudentAttendance
+{
+	vector <string> dates;
+	vector <bool> present;
+	vector <bool> tardy;
+	vector <bool> excused;
+};
+
+struct Student
+{
+	string studentFirstName;
+	string studentLastName;
+	StudentAttendance attendanceRecord;
+};
 
 class Course
 {
@@ -13,7 +29,7 @@ public:
 	Course(string name, const string& filePath)
 	{
 		courseName = name;
-		CreateSections(filePath);
+		CreateCourse(filePath);
 	}
 	//course name (typed manually)
 	void setCourseName(string name)
@@ -29,30 +45,31 @@ private:
 	//num of sections
 	//num of students per section
 	//name of every student in section
-	void CreateSections(const string& filePath)
+	void CreateCourse(const string& filePath)
 	{
+		ifstream fin;
+		fin.open(filePath);
+		string studentNames;
 
+		//every student must be on a new line for this to work correctly
+		while (getline(fin, studentNames))
+		{
+			istringstream ss(studentNames);
+			Student student;
+			ss >> student.studentFirstName >> student.studentLastName;
+			students.push_back(student);
+		}
+		fin.close();
 	}
-	string courseName;
-	vector <Section> sections;
-}
 
-struct Section
-{
+	//Attendence function
+
+	//Database info send function
+
+
+	//Database info recieve function
+
+	string courseName;
 	vector <Student> students;
 	vector <string> meetingDates;
-};
-
-struct Student
-{
-	string studentName;
-	StudentAttendance attendanceRecord;
-};
-
-struct StudentAttendance
-{
-	vector <string> dates;
-	vector <bool> present;
-	vector <bool> tardy;
-	vector <bool> excused;
 };
