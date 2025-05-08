@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     //create course name and send file path for the sections that will be generated automatically
-    const string filePath = "";
+    const string filePath = "StudentNames.txt";
     string courseName;
     cout << "Please Enter Course Name: ";
     cin >> courseName;
