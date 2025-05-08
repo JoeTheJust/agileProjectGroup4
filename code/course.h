@@ -64,8 +64,13 @@ private:
 
 	//Attendence function
 
-	//Database info send function
+	//Database info send function\s
 
+	//Set up for mass student integration, course (one at a time) integration, and student's attendance (one at a time) integration
+	void SendStudentInfo(vector<string> firstNames, vector<string> lastNames);
+	void SendCourseInfo(string courseName);
+	void SendAttendanceInfo(Student student, Course course);
+	
 
 	//Database info recieve function
 
