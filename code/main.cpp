@@ -13,6 +13,8 @@ int main()
     int year = newtime.tm_year;
     cout << year << endl;
 
+    string filePath = "C:/Users/joedi/Agile_mini_project.db";
+    DBInterface db(filePath);
    
     cout << "Current date: " << year << "-" << month << "-" << day << endl;
 
@@ -112,7 +114,7 @@ int main()
             cin >> filePath;
 
             //either create a Course or input into database
-            Course c1(courseName, filePath);
+            Course c1(courseName, filePath, db);
 
             cout << c1.getCourseName();
             cout << " created." << endl;
