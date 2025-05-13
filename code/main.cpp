@@ -45,15 +45,60 @@ int main()
                     string input1;
                     cout << "Type \"1\" to start attendance." << endl;
                     cout << "Type \"2\" to sort students." << endl;
+                    cout << "Type \"3\" to edit a students' attendance" << endl;
+                    cout << "Type \"4\" to get summaries" << endl;
                     cin >> input1;
+
+                    //get summaries
+                    if(input1 == "4"){
+                        //what summaries would the user want
+                    }
+
+                    //edit a students' attendance 
+                    if(input1 == "3"){
+                        //implementation
+                    }
+                    
+                    //sort students
                     if (input1 == "2"){
                         //sort stuff
+
+                        cout << "Type \"1\" to start attendance." << endl;
+                        cout << "Type \"2\" to return to start." << endl;
+                        cin >> input1;
                     }
 
                     //start attendance
+                    if (input1 == "1"){
+                        cout << "Guide: Type \"P\" for present, type \"A\" for absent, type \"T\" for tardy." << endl;
+                        string attendanceInput;
+                        bool attendanceLoop;
+                        //c1 will be the selected course
+                        // for(int i = 0; i < c1.students.size(); ++i){
+                        //     attendanceLoop = true;
+                        //     while (attendanceLoop){
+                        //         cout << c1.students.at(i).studentFirstName << " " << c1.students.at(i).studentLastName << "     ";
+                        //         cin >> attendanceInput;
+                        //         if (attendanceInput == "P"){
+                        //             //input student attendance present
+                        //             attendanceLoop = false;
+                        //         }else if(attendanceInput == "A"){
+                        //             //input student attendance absent
+                        //             attendanceLoop = false;
+                        //         }else if(attendanceInput == "T"){
+                        //             //input student attendance tardy
+                        //             attendanceLoop = false;
+                        //         }else{
+                        //             cout << "Please enter a valid value" << endl;
+                        //         }
+                        //         cout << endl;
+                        //     }
 
-                    loop = false;
-                } else{
+                        // }
+
+                    }
+                }
+                else{
                     cout << "Please enter a valid course name" << endl;
                 }
             
