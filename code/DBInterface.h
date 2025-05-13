@@ -20,5 +20,7 @@ public:
     //void CreateSectionTable();
     void CreateAttendanceTable();
 
+    //int RetrieveStudentInfo(string fName, string);
+
 private:
 };
