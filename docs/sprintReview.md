@@ -2,17 +2,17 @@
 
 ### Sprint #X:
 - **Completed User Stories:**
-  - [List completed user stories]
+  - US-1, US-2
 - **Demo Summary:**
-  - [Summarize demo results if applicable]
+  - User is prompted for Eentering in course info, and a file path for the student info. This information gets passed from the file/command line to the database.
 - **Unfinished Work:**
-  - [List items that were not completed and why]
+  - N/A
 - **Stakeholder Feedback:**
-  - [Feedback from the review meeting]
+  - Good
 - **Process**
   - **Start:**
-    - [What should we start doing?]
+    - Connecting UI to Database more
   - **Stop:**
-    - [What should we stop doing?]
+    - Nothing
   - **Continue:**
-    - [What worked well and should continue?]
+    - Coding in pairs based on speciailty
