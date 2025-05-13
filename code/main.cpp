@@ -1,10 +1,20 @@
 #include <iostream>
+#include <ctime>
 #include "course.h"
 using namespace std;
 
 int main()
 {
-    
+    struct tm newtime;
+    time_t now = time(0);
+    localtime_s(&newtime, &now);
+    int month = 1 + newtime.tm_mon;
+    int day = newtime.tm_mday;
+    int year = newtime.tm_year;
+    cout << year << endl;
+   
+    cout << "Current date: " << year << "-" << month << "-" << day << endl;
+
     //create course name and send file path for the sections that will be generated automatically
     string input;
     while(true){
