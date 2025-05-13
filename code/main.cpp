@@ -97,9 +97,11 @@ int main()
                         // }
 
                     }
+                    loop = false;
                 }
                 else{
                     cout << "Please enter a valid course name" << endl;
+                    loop = true;
                 }
             
             }
