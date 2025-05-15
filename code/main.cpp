@@ -52,11 +52,88 @@ int main()
                     //get summaries
                     if(input1 == "4"){
                         //what summaries would the user want
+                        string input4;
+                        cout << "Type \"1\" to generate day summary." << endl;
+                        cout << "Type \"2\" to generate student summary." << endl;
+                        cout << "Type \"3\" to generate course summary." << endl;
+                        cin >> input4;
+                        cout << endl;
+
+                        if(input4 == "1"){
+
+                            //generate day summary for selected course
+
+                        }else if(input4 == "2"){
+
+                            string studentName;
+                            cout << "Please enter student name" << endl;
+                            cin >> studentName;
+                            cout << endl;
+
+                            bool isStudentName = false;
+                            //loop through course to see if the student name that was inputed
+                            // if student found, isStudentName = true;
+
+                            if(isStudentName){
+                                //call generate student summary
+                            }else{
+                                cout << "Invalid Student Name!" << endl;
+                                cout << endl;
+                            }
+
+                        }else if(input4 == "3"){
+
+                            //generate course summary for selected course
+
+                        }else{
+                            cout << "Invalid input!" << endl;
+                            cout << endl;
+                        }
+
+                        
                     }
 
                     //edit a students' attendance 
                     if(input1 == "3"){
-                        //implementation
+                        
+                        string studentName;
+                        cout << "Type the name of the student you would like to edit the attendance of." << endl;
+                        cin >> studentName;
+                        cout << endl;
+
+                        bool isStudentName = false;
+                        // find if inputed student name is valid
+
+                        if(isStudentName){
+
+                            string attendanceInput;
+                            cout << "What would you like to change about " << studentName << "'s attendance?" << endl;
+                            cout << "Guide: Type \"P\" for present, type \"A\" for absent, type \"T\" for tardy,"  << 
+                            " type \"E\" for excused, type \"U\" for unexcused."<< endl;
+                            cin >> attendanceInput;
+
+                            if(attendanceInput == "P"){
+                                //set present
+                            }else if(attendanceInput == "A"){
+                                //set absent
+                            }else if (attendanceInput == "T"){
+                                //set tardy
+                            }else if (attendanceInput == "E"){
+                                //set excused
+                            }else if (attendanceInput == "U"){
+                                //set unexcused
+                            } else {
+                                cout << "Invalid input!" << endl;
+                                cout << endl;
+                            }
+
+
+                        } else {
+
+                            cout << "Invalid student name!" << endl;
+                            cout << endl;
+                        }
+
                     }
                     
                     //sort students
@@ -70,10 +147,12 @@ int main()
 
                     //start attendance
                     if (input1 == "1"){
-                        cout << "Guide: Type \"P\" for present, type \"A\" for absent, type \"T\" for tardy." << endl;
+                        cout << "Guide: Type \"P\" for present, type \"A\" for absent, type \"T\" for tardy, type \"E\" for excused." << endl;
                         string attendanceInput;
                         bool attendanceLoop;
-                        //c1 will be the selected course
+
+                        /*  possible attendance implementation below  */
+                        ////c1 will be the selected course
                         // for(int i = 0; i < c1.students.size(); ++i){
                         //     attendanceLoop = true;
                         //     while (attendanceLoop){
@@ -88,6 +167,9 @@ int main()
                         //         }else if(attendanceInput == "T"){
                         //             //input student attendance tardy
                         //             attendanceLoop = false;
+                        //         }else if(attendanceInput == "E"){
+                        //              //input student attendance excused
+                        //              attendanceLoop = false;
                         //         }else{
                         //             cout << "Please enter a valid value" << endl;
                         //         }
@@ -131,15 +213,4 @@ int main()
 
         
     }   
-    
-    // const string filePath = "";
-    // string courseName;
-    // cout << "Please Enter Course Name: ";
-    // cin >> courseName;
-    // Course C1(courseName, filePath);
-
-    // cout << C1.getCourseName() << endl;
-
-    // cout<<"Agile Project"<<endl;
-    return 0;
 }
