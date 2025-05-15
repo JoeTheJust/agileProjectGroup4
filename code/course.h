@@ -23,6 +23,7 @@ struct Student
 	StudentAttendance attendanceRecord;
 };
 
+//this class will connect the database storing the student data to the UI to display the information
 class Course
 {
 public:
@@ -69,7 +70,16 @@ private:
 		fin.close();
 	}
 
-	//Attendence function
+	void SaveCourseToDatabase()
+	{
+
+
+	}
+
+	void GetCourseFromDatabase(string courseName)
+	{
+
+	}
 
 	//Database info send function\s
 
@@ -80,7 +90,6 @@ private:
 	// }
 	int getCourseID(string courseName);
 
-	//Database info recieve function
 
 	string courseName;
 	vector <Student> students;
