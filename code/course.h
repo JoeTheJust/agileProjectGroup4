@@ -79,8 +79,6 @@ private:
 
 	// }
 	int getCourseID(string courseName);
-	void SendAttendanceInfo(Student student, Course course);
-	
 
 	//Database info recieve function
 
