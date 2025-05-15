@@ -70,13 +70,22 @@ private:
 		fin.close();
 	}
 
-	void SaveCourseToDatabase()
+	void SaveAttendanceToDatabase()
 	{
+		
+	}
 
+	void GetAttendanceForCurrentDay(string courseName, string currentDate, DBInterface& db)
+	{
+		db.getdateattendenceAlph(courseName, currentDate);
+	}
+
+	void GetAbsentStudentsForCurrentDay(string courseName, string currentDate)
+	{
 
 	}
 
-	void GetCourseFromDatabase(string courseName)
+	void GetTotalCourseAbsensesForAllStudents(string courseName)
 	{
 
 	}
@@ -89,7 +98,6 @@ private:
 
 	// }
 	int getCourseID(string courseName);
-
 
 	string courseName;
 	vector <Student> students;
