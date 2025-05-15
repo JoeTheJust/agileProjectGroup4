@@ -43,6 +43,12 @@ public:
 	{
 		return courseName;
 	}
+
+	void GetAttendanceForCurrentDay(string courseName, string currentDate, DBInterface& db)
+	{
+		db.getdateattendenceAlph(courseName, currentDate);
+	}
+
 private:
 	// \/\/\/--[everything else below will be gotten from a file/database]--\/\/\/
 	//num of sections
@@ -73,11 +79,6 @@ private:
 	void SaveAttendanceToDatabase()
 	{
 		
-	}
-
-	void GetAttendanceForCurrentDay(string courseName, string currentDate, DBInterface& db)
-	{
-		db.getdateattendenceAlph(courseName, currentDate);
 	}
 
 	void GetAbsentStudentsForCurrentDay(string courseName, string currentDate)

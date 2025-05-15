@@ -5,6 +5,9 @@ using namespace std;
 
 int main(){
 
+    //temporary vector
+    vector <Course> courses;
+
     struct tm newtime;
     time_t now = time(0);
     localtime_s(&newtime, &now);
@@ -12,6 +15,7 @@ int main(){
     int day = newtime.tm_mday;
     int year = newtime.tm_year + 1900;
     cout << year << endl;
+    string todayDate = "0" + to_string(month) + "-" + to_string(day) + "-" + to_string(year);
 
     string filePath = "C:/Users/joedi/Agile_mini_project.db";
     DBInterface db(filePath);
@@ -35,10 +39,19 @@ int main(){
                 cin >> inputCourseName;
 
                 bool isCourseName = false; 
+                int courseIndex = 0;
                 //search to see if inputCourseName exists, if it does exist, set isCourseName = true
+                for (int i = 0; i < courses.size(); ++i){
+                    if(inputCourseName == courses.at(i).getCourseName()){
+                        isCourseName = true;
+                        courseIndex = i;
+                        break;
+                    }
+                }
 
                 if(isCourseName){
                     //if courseName is valid here is where course will be loaded into a class
+                    Course selectedCourse = courses.at(courseIndex);
 
                     //select whether the user wants to sort or start attendence
                     string input1;
@@ -61,6 +74,7 @@ int main(){
                         if(input4 == "1"){
 
                             //generate day summary for selected course
+                            selectedCourse.GetAttendanceForCurrentDay(inputCourseName, todayDate, db);
 
                         }else if(input4 == "2"){
 
@@ -213,6 +227,7 @@ int main(){
 
             //either create a Course or input into database
             Course c1(courseName, filePath, db);
+            courses.push_back(c1);
 
             cout << c1.getCourseName();
             cout << " created." << endl;
