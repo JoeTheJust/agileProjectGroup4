@@ -10,7 +10,7 @@ int main()
     localtime_s(&newtime, &now);
     int month = 1 + newtime.tm_mon;
     int day = newtime.tm_mday;
-    int year = newtime.tm_year;
+    int year = newtime.tm_year + 1900;
     cout << year << endl;
 
     string filePath = "C:/Users/joedi/Agile_mini_project.db";
