@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include "DBInterface.h"
 
 using namespace std;
 
@@ -26,10 +27,11 @@ class Course
 {
 public:
 	//default constructor
-	Course(string name, const string& filePath)
+	Course(string name, const string& filePath, DBInterface& database)
 	{
 		courseName = name;
-		CreateCourse(filePath);
+		database.EnterCourse(courseName);
+		CreateCourse(filePath, database);
 	}
 	//course name (typed manually)
 	void setCourseName(string name)
@@ -45,7 +47,7 @@ private:
 	//num of sections
 	//num of students per section
 	//name of every student in section
-	void CreateCourse(const string& filePath)
+	void CreateCourse(const string& filePath, DBInterface& database)
 	{
 		ifstream fin;
 		fin.open(filePath);
@@ -54,11 +56,16 @@ private:
 		//every student must be on a new line for this to work correctly
 		while (getline(fin, studentNames))
 		{
-			istringstream ss(studentNames);
+			stringstream ss(studentNames);
 			Student student;
 			ss >> student.studentFirstName >> student.studentLastName;
 			students.push_back(student);
 		}
+
+		for(int i = 0; i < students.size(); i++) {
+			database.EnterStudent(students[i].studentFirstName, students[i].studentLastName);
+		}
+
 		fin.close();
 	}
 
@@ -67,8 +74,11 @@ private:
 	//Database info send function\s
 
 	//Set up for mass student integration, course (one at a time) integration, and student's attendance (one at a time) integration
-	void SendStudentInfo(vector<string> firstNames, vector<string> lastNames);
-	void SendCourseInfo(string courseName);
+
+	// int getStudentID(string fName, string lName) {
+
+	// }
+	int getCourseID(string courseName);
 	void SendAttendanceInfo(Student student, Course course);
 	
 
