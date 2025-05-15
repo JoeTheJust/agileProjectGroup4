@@ -3,8 +3,8 @@
 #include "course.h"
 using namespace std;
 
-int main()
-{
+int main(){
+
     struct tm newtime;
     time_t now = time(0);
     localtime_s(&newtime, &now);
@@ -234,4 +234,5 @@ int main()
     
     return 0;
 
+}
 }
