@@ -20,8 +20,11 @@ public:
     //void CreateSectionTable();
     void CreateAttendanceTable();
 
-    int RetrieveStudent(string fName, string lName);
-    int RetireveCourse(string courseName);
+        // will return first name, last name, and status 
+    vector<array<string,3>> getdateattendenceAlph(string date, string course);
+    vector<array<string,3>> getdateattendenceFreqAbsent(string date, string course);
+    vector<array<string,3>> getdateattendenceAbsent(string date, string course);
+    vector<array<string,2>> CommonAbsentscourse(string course);
 
 private:
 };
