@@ -13,7 +13,6 @@ int main()
     if(input == "1"){
         //select existing course by getting course data from database
         //select whether the user wants to sort or start attendence
-        
     }
     else if(input == "2"){
         //create new course
