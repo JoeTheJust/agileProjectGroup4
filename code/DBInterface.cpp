@@ -1,4 +1,7 @@
 #include "DBInterface.h"
+#include <vector>
+#include <array>
+#include <string>
 
 DBInterface::DBInterface(string pathToFile) : DBAbstraction(pathToFile) {
 
