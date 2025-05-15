@@ -152,7 +152,7 @@ int main(){
                         } else if (sortInput == "2"){
 
                             //customly sort
-                            
+
                         }
 
                         cout << "Type \"1\" to start attendance." << endl;
@@ -225,29 +225,8 @@ int main(){
             cout << endl;
             cout << "Please input a valid value."<< endl;
         }
-
-    if(input == "1"){
-        //select existing course by getting course data from database
-        //select whether the user wants to sort or start attendence
-    }
-    else if(input == "2"){
-        //create new course
-        string courseName;
-        string filePath;
-        cout << "Enter name of course." << endl;
-        cin >> courseName;
-        cout << "Enter file path." << endl;
-        cin >> filePath;
-        //either create a Course or input into database
-        Course c1(courseName, filePath, db);
-        cout << c1.getCourseName();
-        cout << " created." << endl;
-    }
-    else{
-
-    }
     
     return 0;
 
-}
+    }
 }
