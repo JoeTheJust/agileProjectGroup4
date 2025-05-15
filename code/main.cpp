@@ -3,14 +3,14 @@
 #include "course.h"
 using namespace std;
 
-int main()
-{
+int main(){
+
     struct tm newtime;
     time_t now = time(0);
     localtime_s(&newtime, &now);
     int month = 1 + newtime.tm_mon;
     int day = newtime.tm_mday;
-    int year = newtime.tm_year;
+    int year = newtime.tm_year + 1900;
     cout << year << endl;
 
     string filePath = "C:/Users/joedi/Agile_mini_project.db";
@@ -139,6 +139,21 @@ int main()
                     //sort students
                     if (input1 == "2"){
                         //sort stuff
+                        string sortInput;
+                        cout << "Type \"1\" to sort students by most commonly absent." << endl;
+                        cout << "Type \"2\" to create a custom student sort." << endl;
+                        cin >> sortInput;
+                        cout << endl;
+
+                        if(sortInput == "1"){
+
+                            //sort by most commonly absent
+
+                        } else if (sortInput == "2"){
+
+                            //customly sort
+
+                        }
 
                         cout << "Type \"1\" to start attendance." << endl;
                         cout << "Type \"2\" to return to start." << endl;
@@ -210,28 +225,8 @@ int main()
             cout << endl;
             cout << "Please input a valid value."<< endl;
         }
-
-    if(input == "1"){
-        //select existing course by getting course data from database
-        //select whether the user wants to sort or start attendence
-    }
-    else if(input == "2"){
-        //create new course
-        string courseName;
-        string filePath;
-        cout << "Enter name of course." << endl;
-        cin >> courseName;
-        cout << "Enter file path." << endl;
-        cin >> filePath;
-        //either create a Course or input into database
-        Course c1(courseName, filePath, db);
-        cout << c1.getCourseName();
-        cout << " created." << endl;
-    }
-    else{
-
-    }
     
     return 0;
 
+    }
 }

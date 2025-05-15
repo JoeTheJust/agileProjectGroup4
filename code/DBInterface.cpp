@@ -140,32 +140,7 @@ vector<array<string,3>> DBInterface ::getdateattendenceAlph(string date, string 
 
     sqlite3_finalize(stmt);
 }
-vector<array<string,3>> DBInterface ::getdateattendenceFreqAbsent(string date, string course){
-    const char* sql = "SELECT s.firstName, s.lastName, a.status "
-      "FROM Attendance a "
-      " JOIN Students s ON s.id = a.studentID "
-      " JOIN Courses  c ON c.id = a.courseID "
-      "WHERE c.courseName = ? AND a.date = ? "
-      "  AND a.status IN('AbsentExcused','AbsentUnexcused') "
-      "ORDER BY s.lastName, s.firstName;";
-    sqlite3_stmt* stmt = nullptr;
-    vector<array<string,3>> out;
-    if (sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr) == SQLITE_OK) {
-        if (sqlite3_step(stmt) == SQLITE_ROW) {
-           while (sqlite3_step(stmt) == SQLITE_ROW) {
-        array<string,3> row;
-        row[0] = (char*)sqlite3_column_text(stmt, 0);
-        row[1] = (char*)sqlite3_column_text(stmt, 1);
-        row[2] = (char*)sqlite3_column_text(stmt, 2);
-        out.push_back(row);
-      }
-        }
-    } else {
-        cout << "SQL prepare error: " << sqlite3_errmsg(db) << endl;
-    }
 
-    sqlite3_finalize(stmt);
-}
 vector<array<string,3>> DBInterface ::getdateattendenceAbsent(string date, string course){
     const char* sql = "SELECT s.firstName, s.lastName, a.status "
       "FROM Attendance a "
@@ -213,6 +188,7 @@ vector<array<string,2>> DBInterface::CommonAbsentscourse(string course){
         array<string,2> row;
         row[0] = (char*)sqlite3_column_text(stmt, 0);
         row[1] = (char*)sqlite3_column_text(stmt, 1);
+        //add row
         out.push_back(row);
       }
         }
