@@ -110,3 +110,24 @@ void DBInterface::CreateAttendanceTable() {
         cout << "Error in creating Attedance Join Table" << endl;
     }
 }
+
+int DBInterface::RetrieveStudent(string fName, string lName) {
+    string sql = "SELECT id FROM Students WHERE firstName = ? AND lastName = ?;";
+
+    sqlite3_stmt* myStatement;
+
+    int status = sqlite3_prepare_v2(db, sql.c_str(), -1, &myStatement, NULL);
+
+    if(status == SQLITE_OK) {
+        sqlite3_bind_text(myStatement, 1, fName.c_str(), -1, SQLITE_STATIC);
+        sqlite3_bind_text(myStatement, 2, lName.c_str(), -1, SQLITE_STATIC);
+
+        if(!exectueQueryNoResultsBack(myStatement)) {
+            cout << "Error in retrieving student id from the Student table" << endl;
+        }
+    }
+}
+
+int DBInterface::RetireveCourse(string courseName) {
+    string sql = "SELECT id FROM Courses WHERE courseName = "
+}
