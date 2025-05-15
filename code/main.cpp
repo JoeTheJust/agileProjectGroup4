@@ -139,6 +139,21 @@ int main(){
                     //sort students
                     if (input1 == "2"){
                         //sort stuff
+                        string sortInput;
+                        cout << "Type \"1\" to sort students by most commonly absent." << endl;
+                        cout << "Type \"2\" to create a custom student sort." << endl;
+                        cin >> sortInput;
+                        cout << endl;
+
+                        if(sortInput == "1"){
+
+                            //sort by most commonly absent
+
+                        } else if (sortInput == "2"){
+
+                            //customly sort
+                            
+                        }
 
                         cout << "Type \"1\" to start attendance." << endl;
                         cout << "Type \"2\" to return to start." << endl;
