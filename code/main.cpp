@@ -33,14 +33,13 @@ int main(){
                 string inputCourseName;
                 cout << "Type name of course you want to open." << endl;
                 cin >> inputCourseName;
+
                 bool isCourseName = false; 
-                /* for(int i = 0; i < courseList.size; ++i){
-                    if(courseList.at(i)->getCourseName == inputCourseName){
-                        isCourseName = true;
-                    }
-                }*/
+                //search to see if inputCourseName exists, if it does exist, set isCourseName = true
 
                 if(isCourseName){
+                    //if courseName is valid here is where course will be loaded into a class
+
                     //select whether the user wants to sort or start attendence
                     string input1;
                     cout << "Type \"1\" to start attendance." << endl;
