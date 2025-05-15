@@ -56,7 +56,7 @@ private:
 		//every student must be on a new line for this to work correctly
 		while (getline(fin, studentNames))
 		{
-			istringstream ss(studentNames);
+			stringstream ss(studentNames);
 			Student student;
 			ss >> student.studentFirstName >> student.studentLastName;
 			students.push_back(student);
@@ -64,8 +64,6 @@ private:
 
 		for(int i = 0; i < students.size(); i++) {
 			database.EnterStudent(students[i].studentFirstName, students[i].studentLastName);
-
-
 		}
 
 		fin.close();
